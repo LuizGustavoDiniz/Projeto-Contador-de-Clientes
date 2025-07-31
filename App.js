@@ -1,6 +1,8 @@
 import React from "react";
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native'
 
+//git add . pra mandar todos os arquivos alterados pra stage prontos para o commit
+
 const App = () => {
   return(
      <View style={styles.container}>
