@@ -4,7 +4,7 @@ import {View, Text, StyleSheet} from 'react-native'
 const App = () => {
   return(
      <View style={styles.container}>
-      <Text>Contador de Clientes restaurante</Text>
+      <Text>Contador de Clientes</Text>
     </View>
   )
 }
