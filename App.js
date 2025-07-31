@@ -8,7 +8,7 @@ const App = () => {
 
       <View>
           <TouchableOpacity>
-            <Text></Text>
+            <Text>Adicionar</Text>
           </TouchableOpacity>
       </View>
     </View>
