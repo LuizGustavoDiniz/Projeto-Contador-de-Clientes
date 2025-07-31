@@ -5,6 +5,10 @@ const App = () => {
   return(
      <View style={styles.container}>
       <Text>Contador de Clientes</Text>
+
+      <View>
+        
+      </View>
     </View>
   )
 }
