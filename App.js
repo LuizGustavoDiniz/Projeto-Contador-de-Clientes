@@ -4,7 +4,7 @@ import {View, Text, StyleSheet, TouchableOpacity} from 'react-native'
 const App = () => {
   return(
      <View style={styles.container}>
-      <Text>Contador de Clientes</Text>
+      <Text>Client Counter</Text>
 
       <View>
           <TouchableOpacity>
