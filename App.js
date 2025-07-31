@@ -1,5 +1,5 @@
 import React from "react";
-import {View, Text, StyleSheet} from 'react-native'
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native'
 
 const App = () => {
   return(
@@ -7,7 +7,9 @@ const App = () => {
       <Text>Contador de Clientes</Text>
 
       <View>
-        
+          <TouchableOpacity>
+            <Text></Text>
+          </TouchableOpacity>
       </View>
     </View>
   )
