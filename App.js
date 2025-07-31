@@ -6,7 +6,11 @@ import {View, Text, StyleSheet, TouchableOpacity} from 'react-native'
 const App = () => {
   return(
      <View style={styles.container}>
-      <Text>Client Counter</Text>
+      <Text>Pessoas no restaurante</Text>
+
+      <View>
+        <Text>0</Text>
+      </View>
 
       <View>
           <TouchableOpacity>
