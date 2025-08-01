@@ -4,20 +4,67 @@ import {View, Text, StyleSheet, TouchableOpacity} from 'react-native'
 //git add . pra mandar todos os arquivos alterados pra stage prontos para o commit
 
 const App = () => {
+
+  const [clients, setClients] = useState(0)
+  const [limit, setLimit] = useState(false)
+  const [disableBtn, setDisableBtn] = useState('')
+
+  const setClient = (clientsCounter) => {
+
+     if(clientsCounter >= 10){
+      setClients(10)
+      setLimit(true)
+      return
+     }
+
+     setClients(clientsCounter)
+   
+
+  }
+
+  const removeClient = (clientsCounter) => {
+
+     if(clientsCounter <= 0) return
+
+     if(clientsCounter < 10){
+      setLimit(false)
+     }
+   
+    setClient(clientsCounter)
+  }
+
   return(
      <View style={styles.container}>
       <Text style={styles.title}>Pessoas no restaurante</Text>
 
       <View style={styles.counterArea}>
-        <Text style={styles.counterValue}>10</Text>
+        <Text style={styles.counterValue}>{clients}</Text>
       </View>
 
+       {
+        limit && 
+
+          <View style={styles.limitArea}>
+           <Text style={styles.limitText}>O restaurante está no seu limite de pessoas</Text>
+          </View>
+
+       }
+
+            
+
       <View style={styles.btnArea}>
-          <TouchableOpacity style={styles.btn}>
+          
+          {limit === false ? 
+         <TouchableOpacity style={styles.btn} onPress={() => setClient(clients + 1)}>
             <Text style={styles.btnText}>Adicionar</Text>
           </TouchableOpacity>
+          :
+          <TouchableOpacity style={[styles.btn, {backgroundColor: '#aaa'}]} disabled>
+            <Text style={styles.btnText}>Adicionar</Text>
+          </TouchableOpacity>
+        }   
 
-          <TouchableOpacity style={styles.btn}>
+          <TouchableOpacity style={styles.btn} onPress={() => removeClient(clients - 1)}>
             <Text style={styles.btnText}>Remover</Text>
           </TouchableOpacity>
       </View>
@@ -41,13 +88,24 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     borderRadius: 5,
-    marginVertical: 20,
+    marginVertical: 15,
     alignItems: 'center',
     justifyContent: 'center'
   },
   counterValue:{
     color: '#FFF',
     fontSize: 20
+  },
+  limitArea: {
+    paddingVertical: 8,
+    paddingHorizontal: 8,
+    backgroundColor: 'orange',
+    borderRadius: 5,
+    marginBottom: 10
+  },
+  limitText: {
+    color: '#000',
+    fontWeight: 'bold',
   },
   btnArea: {
     flexDirection: 'row',
